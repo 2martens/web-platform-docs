@@ -131,7 +131,7 @@ If the answer is yes, execute the following commands:
    $ git checkout topic_10
    $ git rebase master
 
-If it is no, replace master with feature-track. If any conflicts occur
+If the answer is no, replace master with feature-track. If any conflicts occur
 during rebase, fix them and retest your changes. If everything checks out,
 perform a forced push to your fork of the official repository:
 
@@ -175,14 +175,11 @@ in the official repository. To make this happen, you need to follow a certain
 process. This process is largely borrowed from the `Symfony`_ project. In particular
 we use the code contribution `guidelines`_ of Symfony.
 
-TODO: point out important differences
-
 There are some differences though: We use an additional ongoing branch named
 feature-track. This branch contains new features that are backward compatible.
 Therefore pay attention to the base branch in the selection. If your feature
-implementation breaks backward compatibility, add [bc-break] into the title
-of the pull request (should also be mentioned in the Symfony contribution
-guideline:TODO).
+implementation breaks backward compatibility, add [BC BREAK] into the title
+of the pull request (is mentioned in the Symfony contribution guideline).
 
 If your pull request covers a new feature, don't forget to link the associated
 pull request for the documentation (in the overview table).
