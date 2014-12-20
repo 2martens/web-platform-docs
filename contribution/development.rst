@@ -184,6 +184,21 @@ of the pull request (is mentioned in the Symfony contribution guideline).
 If your pull request covers a new feature, don't forget to link the associated
 pull request for the documentation (in the overview table).
 
+The overview table is listed hereafter:
+
+.. code-block:: text
+
+   | Q             | A
+   | ------------- | ---
+   | Bug fix?      | [yes|no]
+   | New feature?  | [yes|no]
+   | BC breaks?    | [yes|no]
+   | Deprecations? | [yes|no]
+   | Tests pass?   | [yes|no]
+   | Fixed tickets | [comma separated list of tickets fixed by the PR]
+   | License       | MIT
+   | Doc PR        | [The reference to the documentation PR if any]
+
 .. _`Git book`: http://git-scm.com
 .. _`GitHub`: https://github.com
 .. _`documentation`: http://TODO
