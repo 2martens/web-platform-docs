@@ -1,5 +1,5 @@
 .. index::
-   single: Development
+    single: Development
 
 Development
 ===========
