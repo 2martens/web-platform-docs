@@ -32,9 +32,9 @@ Set up Git
 
 Never heard of Git before? You should change this right now, before going on.
 The `Git book`_ offers a good starting point for that. Next you have to create
-a fork of the official 2martens Web Platform repositories. These are hosted on `GitHub`_,
+forks of the official 2martens Web Platform repositories. These are hosted on `GitHub`_,
 so you will need a GitHub account. GitHub should offer enough help pages to let you
-set up your local clone of your fork.
+set up your local clones of your forks.
 
 As part of these steps you have to give your name and your email address. Be so kind
 and use your real name here and the email address used on GitHub. We won't accept
@@ -101,7 +101,7 @@ should checkout the appropriate branch on your local clone. For new features thi
 is master and for bugfixes the oldest still maintained branch in which the bug occurs.
 Then create a new topic branch with the name ticket_<issueNr>.
 
-Here an example for a new feature and an issue with ID 10:
+Here is an example for a new feature and an issue with ID 10:
 
 .. code-block:: bash
 
