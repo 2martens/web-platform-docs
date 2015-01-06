@@ -114,6 +114,38 @@ clean up the commit log by leaving small commits out of history. But it is not p
 to split commits up. As a rule of thumb: If you don't commit multiple times within
 4 hours of work, you are doing something wrong.
 
+To prevent the introduction of security leaks or backdoors by some shady people,
+you should always use this command for commiting:
+
+.. code-block:: bash
+
+   $ git commit -s
+
+This opens up an ASCII editor (on Linux this is mostly Nano or Vim) where
+you can add the commit message. The -s automatically adds the following line:
+
+.. code-block:: text
+
+   Signed-off-by: {Name} <{Email}>
+
+The braced blocks are placeholders that will contain the name and email
+you have configured Git with. This policy allows for easy checking who
+commited something and potentially introduced a security issue or a backdoor.
+
+However this can be manipulated. So in addition to that every commit that
+will end up in master (every accepted commit would) has to be GPG-signed.
+The project maintainer will carefully evaluate every pull request for such
+security issues and then sign each of the commits. This basically means that
+the maintainer vouches for every signed commit.
+
+If you accidentally introduce a security leak with one commit but remove it
+again with a later one, do not forget to interactively rebase your branch to
+the base branch (below). Squash the related security leak commit to eliminate
+it from the commit history. This prevents people from checking out a version
+of the software that contains this security leak.
+
+You want to know why this is important: `Git Horror Story`_.
+
 The commits should be logically separate actions. It helps to design the specifics
 of the work before starting. Furthermore there are almost certainly already UML
 diagrams associated with new features, so following them is greatly appreciated.
@@ -133,7 +165,16 @@ If the answer is yes, execute the following commands:
 
 If the answer is no, replace master with feature-track. If any conflicts occur
 during rebase, fix them and retest your changes. If everything checks out,
-perform a forced push to your fork of the official repository:
+run the following command:
+
+.. code-block:: bash
+
+   $ git rebase -i master
+
+If your changes don't break backwards compatibility, replace master with
+feature-track. This command shows you a list of your commits. The commits
+that should not end up in commit history should be squashed (e.g. code style fixes). As explained above commits introducing security leaks should
+also be squashed here. After everything is done perform a forced push to your fork of the official repository:
 
 .. code-block:: bash
 
@@ -205,3 +246,4 @@ The overview table is listed hereafter:
 .. _`Symfony`: http://symfony.com
 .. _`PHPUnit`: TODO
 .. _`guidelines`: http://symfony.com/doc/current/contributing/code/index.html
+.. _`Git Horror Story`: http://mikegerwitz.com/papers/git-horror-story
