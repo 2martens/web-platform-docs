@@ -11,5 +11,5 @@ changes of the documentation.
 New entries
 -----------
 
-[Development] Added development page content
-[Marketing] Added marketing page content
+* [Development] Added development page content
+* [Marketing] Added marketing page content
