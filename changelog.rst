@@ -14,3 +14,4 @@ New entries
 * [Development] Added development page content
 * [Marketing] Added marketing page content
 * [Documentation] Added ACP Layout documentation
+* [Documentation] Added ACP Dashboard documentation
