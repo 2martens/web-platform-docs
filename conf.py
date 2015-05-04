@@ -26,21 +26,8 @@ sys.path.append(os.path.abspath('_exts'))
 
 # adding PhpLexer
 from sphinx.highlighting import lexers
+from pygments.lexers.compiled import CLexer
 from pygments.lexers.web import PhpLexer
-
-# -- Settings for symfony doc extension ---------------------------------------------------
-
-# enable highlighting for PHP code not between ``<?php ... ?>`` by default
-lexers['php'] = PhpLexer(startinline=True)
-lexers['php-annotations'] = PhpLexer(startinline=True)
-lexers['php-standalone'] = PhpLexer(startinline=True)
-lexers['php-symfony'] = PhpLexer(startinline=True)
-
-# use PHP as the primary domain
-primary_domain = 'php'
-
-# set url for API links
-api_url = 'http://api.2martens.de/web-platform/master/%s'
 
 # -- General configuration ------------------------------------------------
 
@@ -56,7 +43,8 @@ extensions = [
     'sphinx.ext.todo',
     'sensio.sphinx.refinclude',
     'sensio.sphinx.configurationblock',
-    'sensio.sphinx.phpcode'
+    'sensio.sphinx.phpcode',
+    'sensio.sphinx.bestpractice'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -121,6 +109,22 @@ pygments_style = 'sphinx'
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
+
+# -- Settings for symfony doc extension ---------------------------------------------------
+
+# enable highlighting for PHP code not between ``<?php ... ?>`` by default
+lexers['php'] = PhpLexer(startinline=True)
+lexers['php-annotations'] = PhpLexer(startinline=True)
+lexers['php-standalone'] = PhpLexer(startinline=True)
+lexers['php-symfony'] = PhpLexer(startinline=True)
+lexers['varnish3'] = CLexer()
+lexers['varnish4'] = CLexer()
+
+# use PHP as the primary domain
+primary_domain = 'php'
+
+# set url for API links
+api_url = 'http://api.2martens.de/web-platform/master/%s'
 
 
 # -- Options for HTML output ----------------------------------------------
