@@ -5,6 +5,7 @@ Developer documentation
     :hidden:
 
     acpLayout
+    acpDashboard
 
 The developer documentation is an essential part of every big and successful
 project. Therefore it is vital to start early on and develop it at the same
