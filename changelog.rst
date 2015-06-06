@@ -16,3 +16,4 @@ New entries
 * [Documentation] Added ACP Layout documentation
 * [Documentation] Added ACP Dashboard documentation
 * [Documentation] Added Field classes documentation
+* [Documentation] Added Option system documentation
