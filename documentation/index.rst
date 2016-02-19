@@ -7,6 +7,7 @@ Developer documentation
     acpLayout
     acpDashboard
     field
+    userGroupSystem
     optionSystem
 
 The developer documentation is an essential part of every big and successful
